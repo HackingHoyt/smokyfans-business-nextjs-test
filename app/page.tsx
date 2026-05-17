@@ -10,8 +10,7 @@ const navItems = [
   { label: "Advertise", href: "#advertise" },
   {
     label: "Community Home",
-    // TODO: Replace with verified SmokyFans community URL from approved project content.
-    href: "https://example.com/smokyfans-community",
+    href: "https://smokyfans.com",
     external: true,
   },
 ];
@@ -106,7 +105,7 @@ export default function Home() {
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#listings" className="rounded-full bg-electric px-6 py-3 font-semibold text-black shadow-glow transition hover:brightness-110">Explore Listings</a>
             <a
-              href="https://example.com/smokyfans-community"
+              href="https://smokyfans.com"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border border-white/40 bg-black/30 px-6 py-3 font-semibold text-white hover:border-ember hover:text-amber-200"
@@ -219,10 +218,11 @@ export default function Home() {
             <p className="text-white/70">Business Directory in the Smoky Mountains</p>
           </div>
           <div className="flex flex-wrap gap-4 text-white/85">
-            <a href="https://example.com/smokyfans-community" target="_blank" rel="noopener noreferrer" className="hover:text-electric">SmokyFans Community</a>
+            <a href="https://smokyfans.com" target="_blank" rel="noopener noreferrer" className="hover:text-electric">SmokyFans Community</a>
             <a href="#listings" className="hover:text-electric">Listings</a>
             <a href="#advertise" className="hover:text-electric">Advertise</a>
             <a href="#faq" className="hover:text-electric">FAQ</a>
+            <a href="/admin" className="text-white/70 hover:text-electric">Admin Demo</a>
           </div>
         </div>
       </footer>
