@@ -54,13 +54,7 @@ const featuredBusinesses = [
 
 export default function Home() {
   return (
-    <main
-      className="min-h-screen bg-cover bg-center bg-fixed text-white"
-      style={{
-        backgroundImage:
-          "linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(6,21,52,0.45), rgba(0,0,0,0.75)), url('/everything-smokies-hero.png')",
-      }}
-    >
+    <main className="everything-smokies-page-bg min-h-screen text-white">
       <section className="relative isolate overflow-hidden">
 
         <header className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-5 md:px-8">

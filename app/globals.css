@@ -13,3 +13,29 @@ body {
 .glass-card {
   @apply rounded-2xl border border-white/15 bg-white/10 backdrop-blur-md;
 }
+
+
+/* 
+  Everything Smokies responsive page background:
+  - Mobile uses the vertical mobile-specific hero image.
+  - Desktop/tablet uses the wider desktop hero image.
+*/
+.everything-smokies-page-bg {
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.28), rgba(6, 21, 52, 0.38), rgba(0, 0, 0, 0.72)),
+    url("/everything-smokies-hero-mobile-sf-v1.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+@media (min-width: 768px) {
+  .everything-smokies-page-bg {
+    background-image:
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(6, 21, 52, 0.45), rgba(0, 0, 0, 0.75)),
+      url("/everything-smokies-hero.png");
+    background-position: center;
+    background-attachment: fixed;
+  }
+}
