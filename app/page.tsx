@@ -28,42 +28,71 @@ const categories = [
   "Shopping",
 ];
 
-// Featured business demo data for PASS 1. Avoid unverified external URLs.
+// Featured business data for PASS 4 using verified public SmokyFans directory listings.
 const featuredBusinesses = [
   {
-    name: "Mountain Mist Cabins",
-    category: "Cabins",
-    location: "Gatlinburg, TN",
-    description: "Luxury mountain-view cabins with hot tubs and family-friendly amenities.",
-    rating: "★★★★☆",
-  },
-  {
-    name: "Smoky Trail Outfitters",
-    category: "Outdoor Activities",
+    name: "Tennessee Bible Museum",
+    category: "Attractions / Religious",
     location: "Pigeon Forge, TN",
-    description: "Guided hikes, waterfall tours, and adventure rentals for every skill level.",
-    rating: "★★★★★",
+    description: "Bible museum and faith-based attraction in Pigeon Forge featuring historic exhibits and museum experiences.",
+    website: "https://tnbiblemuseum.com/",
+    buttonLabel: "Visit Website",
   },
   {
-    name: "Blue Ridge Bistro",
+    name: "Pigeon Forge Snow",
+    category: "Attractions",
+    location: "Pigeon Forge, TN",
+    description: "Indoor snow tubing attraction offering year-round snow play in Pigeon Forge.",
+    website: "https://pigeonforgesnow.com/",
+    buttonLabel: "View Website",
+  },
+  {
+    name: "Preachers Smokehouse",
     category: "Dining",
     location: "Sevierville, TN",
-    description: "Farm-to-table comfort dishes inspired by Appalachian flavors.",
-    rating: "★★★★☆",
+    description: "Local smokehouse serving barbecue and comfort food in the Smoky Mountains.",
+    website: "https://preacherssmokehouse.com/",
+    buttonLabel: "Visit Website",
   },
   {
-    name: "Heritage Craft Collective",
-    category: "Local Artists",
-    location: "Townsend, TN",
-    description: "Handmade art, woodwork, and local gifts curated from Smoky Mountain makers.",
-    rating: "★★★★★",
+    name: "Rocky Top Mountain Coaster",
+    category: "Attractions / Outdoor Activities",
+    location: "Pigeon Forge, TN",
+    description: "Mountain coaster attraction in Pigeon Forge with outdoor Smoky Mountain adventure appeal.",
+    website: "https://www.rockytopcoaster.com/",
+    buttonLabel: "View Website",
   },
   {
-    name: "Evergreen Event Co.",
+    name: "Sevier Lash Envy",
+    category: "Services",
+    location: "Sevierville, TN",
+    description: "Beauty and lash service business serving Sevierville and the surrounding Smoky Mountain area.",
+    website: "https://linktr.ee/SevierLashEnvyLLC",
+    buttonLabel: "Visit Website",
+  },
+  {
+    name: "Appalachian Septic and Pumping – ASAP",
+    category: "Services",
+    location: "Sevierville, TN",
+    description: "Septic pumping and service provider serving Sevier County and nearby Smoky Mountain communities.",
+    website: "https://www.appalachianseptic.com/",
+    buttonLabel: "View Website",
+  },
+  {
+    name: "Bear Mountain Weddings",
     category: "Weddings",
-    location: "Wears Valley, TN",
-    description: "Full-service planning for unforgettable Smoky Mountain wedding weekends.",
-    rating: "★★★★☆",
+    location: "Sevierville, TN",
+    description: "Smoky Mountain wedding service offering local wedding experiences in the Sevierville area.",
+    website: "https://bearmountainweddings.com",
+    buttonLabel: "Visit Website",
+  },
+  {
+    name: "Right Angle Technology",
+    category: "Services",
+    location: "Sevierville, TN",
+    description: "Local technology and IT service provider serving Smoky Mountain businesses and communities.",
+    website: "https://rightangletechnology.com",
+    buttonLabel: "View Website",
   },
 ];
 
@@ -140,6 +169,9 @@ export default function Home() {
 
       <section className="mx-auto max-w-6xl px-4 py-4 md:px-8 md:py-8">
         <h2 className="text-2xl font-semibold">Featured Businesses</h2>
+        <p className="mt-2 text-sm text-white/80">
+          Featured listings below are based on public SmokyFans business directory entries.
+        </p>
         <div className="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {featuredBusinesses.map((business) => (
             <article key={business.name} className="glass-card p-5">
@@ -147,15 +179,14 @@ export default function Home() {
               <h3 className="mt-2 text-lg font-semibold">{business.name}</h3>
               <p className="mt-1 text-sm text-amber-200">{business.location}</p>
               <p className="mt-3 text-sm text-white/85">{business.description}</p>
-              <p className="mt-3 text-sm">Rating: <span className="text-amber-300">{business.rating}</span></p>
-              <button
-                type="button"
-                disabled
-                className="mt-4 cursor-not-allowed rounded-full border border-electric/40 px-4 py-2 text-sm font-medium text-electric/70"
-                title="Details coming soon"
+              <a
+                href={business.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block rounded-full border border-electric/50 px-4 py-2 text-sm font-medium text-electric transition hover:border-electric hover:text-cyan-200"
               >
-                View Listing (Coming Soon)
-              </button>
+                {business.buttonLabel}
+              </a>
             </article>
           ))}
         </div>
